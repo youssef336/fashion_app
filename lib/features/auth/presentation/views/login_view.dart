@@ -1,7 +1,7 @@
 import 'package:fashion/core/helper_functions/build_error_bar.dart';
 import 'package:fashion/core/services/get_it_service.dart';
 import 'package:fashion/core/widgets/custom_modal_progress_hub.dart';
-import 'package:fashion/features/auth/domain/repo/login_repo.dart';
+import 'package:fashion/features/auth/domain/repo/auth_repo.dart';
 import 'package:fashion/features/auth/presentation/manager/cubits/login/login_cubit.dart';
 import 'package:fashion/features/auth/presentation/views/widgets/login_view_body.dart';
 import 'package:fashion/features/auth/presentation/views/widgets/login_view_body_bloc_builder.dart';
@@ -18,7 +18,7 @@ class LoginView extends StatelessWidget {
       backgroundColor: Colors.black54,
       body: SafeArea(
         child: BlocProvider(
-          create: (context) => LoginCubit(getIt<LoginRepo>()),
+          create: (context) => LoginCubit(getIt<AuthRepo>()),
           child: const LoginViewBodyBlocBuilder(),
         ),
       ),

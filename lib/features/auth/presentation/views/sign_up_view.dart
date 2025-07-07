@@ -1,15 +1,50 @@
+import 'package:fashion/core/helper_functions/build_error_bar.dart';
+import 'package:fashion/core/services/get_it_service.dart';
+import 'package:fashion/core/widgets/custom_modal_progress_hub.dart';
+import 'package:fashion/features/auth/domain/repo/auth_repo.dart';
+import 'package:fashion/features/auth/presentation/manager/cubits/sign_up/sign_up_cubit.dart';
 import 'package:fashion/features/auth/presentation/views/widgets/sign_up_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
   static const routeName = '/signup';
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black54,
 
-      body: SignUpViewBody(),
+      body: SafeArea(
+        child: BlocProvider(
+          create: (context) => SignUpCubit(getIt<AuthRepo>()),
+          child: const SignUpViewBodyBlocConsumer(),
+        ),
+      ),
+    );
+  }
+}
+
+class SignUpViewBodyBlocConsumer extends StatelessWidget {
+  const SignUpViewBodyBlocConsumer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<SignUpCubit, SignUpState>(
+      listener: (context, state) {
+        if (state is SignUpSuccess) {
+          Navigator.pop(context);
+          showErrorBar(context, "Successfully Signed Up");
+        } else if (state is SignUpError) {
+          showErrorBar(context, state.error);
+        }
+      },
+      builder: (context, state) {
+        return CustomModalProgressHUD(
+          inAsyncCall: state is SignUpLoading,
+          child: const SignUpViewBody(),
+        );
+      },
     );
   }
 }

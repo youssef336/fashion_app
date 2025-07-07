@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:fashion/features/auth/domain/repo/login_repo.dart';
+import 'package:fashion/features/auth/domain/repo/auth_repo.dart';
 import 'package:meta/meta.dart';
 
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  final LoginRepo loginRepo;
+  final AuthRepo loginRepo;
   LoginCubit(this.loginRepo) : super(LoginInitial());
 
   Future<void> loginUser(String email, String password) async {
