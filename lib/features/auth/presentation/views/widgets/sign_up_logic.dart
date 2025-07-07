@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:fashion/core/widgets/custom_buttom.dart';
 import 'package:fashion/core/widgets/custom_text_feild.dart';

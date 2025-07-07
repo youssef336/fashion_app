@@ -1,6 +1,4 @@
 import 'package:fashion/core/utils/assets.dart';
-import 'package:fashion/core/widgets/custom_buttom.dart';
-import 'package:fashion/core/widgets/custom_text_feild.dart';
 import 'package:fashion/features/auth/presentation/views/widgets/sign_up_logic.dart';
 import 'package:flutter/material.dart';
 

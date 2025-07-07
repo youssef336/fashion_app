@@ -60,8 +60,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
       bool isLogin = isUserLoggedIn();
       if (isLogin) {
         await Navigator.of(context).pushReplacementNamed(HomeView.routeName);
+      } else {
+        await Navigator.of(context).pushReplacement(route);
       }
-      await Navigator.of(context).pushReplacement(route);
     }
   }
 
