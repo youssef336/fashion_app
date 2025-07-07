@@ -1,7 +1,6 @@
-import 'package:fashion/core/widgets/custom_buttom.dart';
-import 'package:fashion/core/widgets/custom_text_feild.dart';
 import 'package:fashion/features/auth/presentation/views/sign_up_view.dart';
 import 'package:fashion/features/auth/presentation/views/widgets/hero_animation.dart';
+import 'package:fashion/features/auth/presentation/views/widgets/login_logic.dart';
 import 'package:flutter/material.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -16,22 +15,8 @@ class LoginViewBody extends StatelessWidget {
           children: [
             const HeroAnimation(),
 
-            const SizedBox(height: 20),
-            const CustomTextFormFeild(
-              textInputType: TextInputType.emailAddress,
-              hintText: 'Email',
-              maxLines: 1,
-              obscureText: false,
-            ),
-            const SizedBox(height: 20),
-            const CustomTextFormFeild(
-              textInputType: TextInputType.visiblePassword,
-              hintText: 'Password',
-              maxLines: 1,
-              obscureText: true,
-            ),
-            const SizedBox(height: 60),
-            const CustomButtom(text: 'Login'),
+            const LoginLogic(),
+
             const SizedBox(height: 10),
             GestureDetector(
               onTap: () {

@@ -1,8 +1,15 @@
 import 'package:fashion/core/helper_functions/on_generate_routes.dart';
+import 'package:fashion/core/services/get_it_service.dart';
 import 'package:fashion/features/splash/presentation/views/splash_view.dart';
+import 'package:fashion/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  setupGetIt();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
