@@ -1,5 +1,6 @@
 import 'package:fashion/features/auth/presentation/views/login_view.dart';
 import 'package:fashion/features/auth/presentation/views/sign_up_view.dart';
+import 'package:fashion/features/home/presentation/views/all_product_view.dart';
 import 'package:fashion/features/home/presentation/views/home_view.dart';
 import 'package:fashion/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const SplashView());
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (_) => const SignUpView());
+    case AllProductView.routeName:
+      return MaterialPageRoute(builder: (_) => const AllProductView());
     default:
       return MaterialPageRoute(
         builder: (_) =>
