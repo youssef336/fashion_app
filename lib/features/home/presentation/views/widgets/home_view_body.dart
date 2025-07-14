@@ -1,3 +1,5 @@
+import 'package:fashion/core/entities/product_entity.dart';
+import 'package:fashion/core/helper_functions/dummy_product_entity.dart';
 import 'package:fashion/core/utils/assets.dart';
 import 'package:fashion/features/home/domain/entities/cover_entity.dart';
 import 'package:fashion/features/home/presentation/views/widgets/cover_item.dart';
@@ -7,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  final List<ProductEntity> products;
+  const HomeViewBody({super.key, required this.products});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +31,8 @@ class HomeViewBody extends StatelessWidget {
               mainAxisExtent: 300,
             ),
             delegate: SliverChildBuilderDelegate(
-              (context, index) => const ProductItem(),
-              childCount: 6,
+              (context, index) => ProductItem(product: products[index]),
+              childCount: 1,
             ),
           ),
         ),

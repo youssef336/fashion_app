@@ -1,8 +1,10 @@
+import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/features/home/presentation/views/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 
 class AllProductViewBody extends StatelessWidget {
-  const AllProductViewBody({super.key});
+  final List<ProductEntity> productList;
+  const AllProductViewBody({super.key, required this.productList});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +17,8 @@ class AllProductViewBody extends StatelessWidget {
         crossAxisSpacing: 15,
         mainAxisExtent: 300,
       ),
-      itemBuilder: (context, index) => const ProductItem(),
-      itemCount: 10,
+      itemBuilder: (context, index) => ProductItem(product: productList[index]),
+      itemCount: productList.length,
     );
   }
 }
