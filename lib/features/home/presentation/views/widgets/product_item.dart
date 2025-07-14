@@ -16,8 +16,9 @@ class ProductItem extends StatelessWidget {
           SizedBox(
             height: 220,
             width: MediaQuery.of(context).size.width * 0.5,
-            child: Image.asset(
-              Assets.assetsImageFirstProduct,
+            child: Image.network(
+              product.image ??
+                  "https://tse2.mm.bing.net/th/id/OIP.rs4ZT2mmKC11cgaVmW44RQHaJU?pid=Api&P=0&h=220",
               fit: BoxFit.fill,
             ),
           ),
