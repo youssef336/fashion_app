@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/core/utils/assets.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 class ProductEntity {
   String name;
   String description;

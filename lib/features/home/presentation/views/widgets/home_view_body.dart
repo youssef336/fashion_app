@@ -1,4 +1,5 @@
 import 'package:fashion/core/entities/product_entity.dart';
+// ignore: unused_import
 import 'package:fashion/core/helper_functions/dummy_product_entity.dart';
 import 'package:fashion/core/utils/assets.dart';
 import 'package:fashion/features/home/domain/entities/cover_entity.dart';

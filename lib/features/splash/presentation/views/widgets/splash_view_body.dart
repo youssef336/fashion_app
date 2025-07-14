@@ -1,11 +1,7 @@
 import 'package:fashion/core/services/firebase_auth_service.dart';
-import 'package:fashion/core/services/get_it_service.dart';
-import 'package:fashion/core/services/main/database_service.dart';
 import 'package:fashion/core/utils/assets.dart';
 import 'package:fashion/features/auth/presentation/views/login_view.dart';
 import 'package:fashion/features/home/presentation/views/home_view.dart';
-import 'package:fashion/features/splash/data/repo/pay_repo_impl.dart';
-import 'package:fashion/features/splash/domains/repo/pay_repo.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatefulWidget {

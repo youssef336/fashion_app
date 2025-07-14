@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:bloc/bloc.dart';
 import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/core/models/product_model.dart';
