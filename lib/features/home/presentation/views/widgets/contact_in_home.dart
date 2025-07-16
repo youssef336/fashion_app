@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:fashion/core/utils/assets.dart';
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -37,20 +38,29 @@ class ContactInHome extends StatelessWidget {
             height: 16,
           ),
           const SizedBox(height: 30),
-          const Text(
+          Text(
             "support@openui.design",
-            style: TextStyle(color: Colors.black54, fontSize: 20),
+            style: TextStyles.tenor_VeryLarge_14.copyWith(
+              color: Colors.black54,
+              fontSize: 18,
+            ),
           ),
           const SizedBox(height: 5),
-          const Text(
+          Text(
             "+60 825 876",
-            style: TextStyle(color: Colors.black54, fontSize: 20),
+            style: TextStyles.tenor_VeryLarge_14.copyWith(
+              color: Colors.black54,
+              fontSize: 18,
+            ),
           ),
           const SizedBox(height: 5),
 
-          const Text(
+          Text(
             "08:00 - 22:00 - Everyday",
-            style: TextStyle(color: Colors.black54, fontSize: 20),
+            style: TextStyles.tenor_VeryLarge_14.copyWith(
+              color: Colors.black54,
+              fontSize: 18,
+            ),
           ),
           const SizedBox(height: 30),
           SvgPicture.asset(
@@ -60,21 +70,30 @@ class ContactInHome extends StatelessWidget {
             height: 16,
           ),
           const SizedBox(height: 40),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("About", style: TextStyle(fontSize: 22)),
-              SizedBox(width: 60),
-              Text("Contact", style: TextStyle(fontSize: 22)),
-              SizedBox(width: 60),
+              Text(
+                "About",
+                style: TextStyles.bodyL_VeryLarge_16.copyWith(fontSize: 18),
+              ),
+              const SizedBox(width: 60),
+              Text(
+                "Contact",
+                style: TextStyles.bodyL_VeryLarge_16.copyWith(fontSize: 18),
+              ),
+              const SizedBox(width: 60),
 
-              Text("Blog", style: TextStyle(fontSize: 22)),
+              Text(
+                "Blog",
+                style: TextStyles.bodyL_VeryLarge_16.copyWith(fontSize: 18),
+              ),
             ],
           ),
           const SizedBox(height: 25),
-          const Text(
+          Text(
             "Copyright© OpenUI All Rights Reserved.",
-            style: TextStyle(color: Colors.grey),
+            style: TextStyles.tenor_Medium_14.copyWith(color: Colors.black54),
           ),
         ],
       ),

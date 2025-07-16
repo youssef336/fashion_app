@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class amount extends StatefulWidget {
@@ -35,7 +36,7 @@ class _amountState extends State<amount> {
         const SizedBox(width: 10),
         Text(
           widget.counter.value.toString(),
-          style: const TextStyle(fontSize: 20),
+          style: TextStyles.title_Medium_24,
         ),
         const SizedBox(width: 10),
         GestureDetector(

@@ -39,11 +39,11 @@ class CustomTextFormFeild extends StatelessWidget {
         ),
 
         filled: true,
-        fillColor: const Color(0xFFF9FAFA),
+        fillColor: Colors.transparent,
 
-        border: bulidBoarder(),
-        enabledBorder: bulidBoarder(),
-        focusedBorder: bulidBoarder(),
+        border: buildUnderlineBorder(),
+        enabledBorder: buildUnderlineBorder(),
+        focusedBorder: buildUnderlineBorder(),
       ),
 
       onChanged: (value) {
@@ -56,6 +56,12 @@ class CustomTextFormFeild extends StatelessWidget {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(4),
       borderSide: const BorderSide(color: Color(0xFFE6E9E9), width: 1.0),
+    );
+  }
+
+  UnderlineInputBorder buildUnderlineBorder() {
+    return const UnderlineInputBorder(
+      borderSide: BorderSide(color: Colors.grey, width: 1.0),
     );
   }
 }

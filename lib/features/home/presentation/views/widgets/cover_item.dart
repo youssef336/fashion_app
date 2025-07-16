@@ -1,3 +1,4 @@
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CoverItem extends StatelessWidget {
@@ -10,14 +11,13 @@ class CoverItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Image.asset(image, height: 400),
-        const SizedBox(height: 10),
+        const SizedBox(height: 18),
         Text(
-          title,
-          style: const TextStyle(
+          title.toUpperCase(),
+          style: TextStyles.tenor_Small_14.copyWith(
             color: Colors.white,
-            fontSize: 30,
-            letterSpacing: 2,
-            fontWeight: FontWeight.w400,
+            letterSpacing: 3,
+            fontSize: 17,
           ),
         ),
       ],

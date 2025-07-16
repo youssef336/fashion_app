@@ -1,5 +1,6 @@
 import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/core/utils/assets.dart';
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:fashion/core/widgets/custom_app_bar.dart';
 import 'package:fashion/features/check_out/presentation/views/widgets/amount.dart';
 import 'package:fashion/features/check_out/presentation/views/widgets/check_out_buttom.dart';
@@ -9,8 +10,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CheckOutFirstPhase extends StatelessWidget {
-  CheckOutFirstPhase({super.key, required this.product});
-  final ValueNotifier<int> counter = ValueNotifier(1);
+  const CheckOutFirstPhase({
+    super.key,
+    required this.product,
+    required this.onTap,
+    required this.counter,
+  });
+  final ValueNotifier<int> counter;
+
+  final void Function() onTap;
   final ProductEntity product;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +32,7 @@ class CheckOutFirstPhase extends StatelessWidget {
               children: [
                 CustomAppBar(isblack: false),
                 const SizedBox(height: 34),
-                const Header(text: "Check Out"),
+                const Header(text: "CheckOut"),
                 const SizedBox(height: 20),
 
                 CheckOutItem(product: product, counter: counter),
@@ -38,7 +46,7 @@ class CheckOutFirstPhase extends StatelessWidget {
                     const SizedBox(width: 10),
                     const Text(
                       "Add promo code",
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyles.bodyL_Medium_16,
                     ),
                   ],
                 ),
@@ -50,10 +58,10 @@ class CheckOutFirstPhase extends StatelessWidget {
                     const SizedBox(width: 29),
                     SvgPicture.asset(Assets.assetsImageDoor, height: 25),
                     const SizedBox(width: 10),
-                    const Text("Delivery", style: TextStyle(fontSize: 15)),
+                    const Text("Delivery", style: TextStyles.bodyL_Medium_16),
                     const Spacer(),
 
-                    const Text("Free", style: TextStyle(fontSize: 15)),
+                    const Text("Free", style: TextStyles.bodyL_Medium_16),
                     const SizedBox(width: 29),
                   ],
                 ),
@@ -66,7 +74,11 @@ class CheckOutFirstPhase extends StatelessWidget {
         const Spacer(),
         TotalPrice(counter: counter, product: product),
         const SizedBox(height: 10),
-        const CheckOutButtom(),
+        CheckOutButtom(
+          text: "CheckOut",
+          image: Assets.assetsImageShoppingbag,
+          onTap: onTap,
+        ),
       ],
     );
   }
@@ -88,14 +100,13 @@ class TotalPrice extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                "Total",
-                style: TextStyle(color: Colors.black, fontSize: 20),
-              ),
+              const Text("Total", style: TextStyles.title_Medium_24),
               const Spacer(),
               Text(
                 "\$${result.toStringAsFixed(2)}",
-                style: const TextStyle(color: Colors.black, fontSize: 20),
+                style: TextStyles.price_Large_18.copyWith(
+                  color: const Color(0xffDD8560),
+                ),
               ),
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:fashion/core/utils/assets.dart';
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,10 +14,9 @@ class Header extends StatelessWidget {
       children: [
         Text(
           text.toUpperCase(),
-          style: const TextStyle(
-            fontSize: 30,
+          style: TextStyles.title_Medium_24.copyWith(
             letterSpacing: 6,
-            fontWeight: FontWeight.w400,
+            fontSize: 20,
           ),
         ),
         SvgPicture.asset(

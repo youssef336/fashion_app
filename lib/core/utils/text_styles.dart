@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Wt {
-  static const small = FontWeight.w300;
-  static const medium = FontWeight.w400;
-  static const large = FontWeight.w600;
-  static const veryLarge = FontWeight.w800;
+  static const small = FontWeight.w100;
+  static const medium = FontWeight.w500;
+  static const large = FontWeight.w700;
+  static const veryLarge = FontWeight.w900;
 }
 
 class TextStyles {
-  static const _fontFamily = 'Tenor Sans';
+  static const _fontFamily = 'TenorSans';
 
   // === Title (24) ===
   static const title_Small_24 = TextStyle(

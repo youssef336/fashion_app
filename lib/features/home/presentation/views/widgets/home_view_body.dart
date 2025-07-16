@@ -2,6 +2,7 @@ import 'package:fashion/core/entities/product_entity.dart';
 // ignore: unused_import
 import 'package:fashion/core/helper_functions/dummy_product_entity.dart';
 import 'package:fashion/core/utils/assets.dart';
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:fashion/features/home/domain/entities/cover_entity.dart';
 import 'package:fashion/features/home/presentation/views/widgets/contact_in_home.dart';
 import 'package:fashion/features/home/presentation/views/widgets/cover_item.dart';
@@ -44,9 +45,8 @@ class HomeViewBody extends StatelessWidget {
             children: [
               Text(
                 "You may also like".toUpperCase(),
-                style: const TextStyle(
+                style: TextStyles.title_Large_24.copyWith(
                   color: Colors.white,
-                  fontSize: 25,
                   letterSpacing: 3,
                 ),
               ),

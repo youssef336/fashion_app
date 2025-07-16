@@ -2,6 +2,7 @@
 
 import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/core/utils/assets.dart';
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:fashion/features/check_out/presentation/views/check_out_view.dart';
 import 'package:flutter/material.dart';
 
@@ -37,19 +38,25 @@ class ProductItem extends StatelessWidget {
 
             Text(
               product.name,
-              style: const TextStyle(color: Colors.white),
+              style: TextStyles.bodyL_Small_16.copyWith(color: Colors.white),
               maxLines: 1,
             ),
             Text(
               product.description,
-              style: const TextStyle(color: Colors.grey),
+              style: TextStyles.bodyL_Small_16.copyWith(
+                fontSize: 15,
+                color: Colors.grey,
+              ),
 
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              product.price.toString(),
-              style: const TextStyle(color: Color(0xffDD8560)),
+              "\$${product.price.toString()}",
+              style: TextStyles.price_Small_18.copyWith(
+                fontSize: 15,
+                color: const Color(0xffDD8560),
+              ),
             ),
           ],
         ),

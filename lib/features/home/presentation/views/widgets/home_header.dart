@@ -1,3 +1,4 @@
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:fashion/core/widgets/custom_app_bar.dart';
 import 'package:fashion/features/home/presentation/views/all_product_view.dart';
 import 'package:fashion/features/home/presentation/views/widgets/stack_first_image.dart';
@@ -13,20 +14,18 @@ class HomeHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(isblack: true),
+          CustomAppBar(isblack: true, isfirst: true),
           const SizedBox(height: 20),
           const StackFirstimage(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Row(
               children: [
-                const Text(
+                Text(
                   'New Arrivals',
-                  style: TextStyle(
+                  style: TextStyles.title_Large_24.copyWith(
                     color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const Spacer(),
@@ -34,12 +33,10 @@ class HomeHeader extends StatelessWidget {
                   onTap: () {
                     Navigator.pushNamed(context, AllProductView.routeName);
                   },
-                  child: const Text(
+                  child: Text(
                     'See All',
-                    style: TextStyle(
-                      color: Color(0xffDD8560),
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                    style: TextStyles.bodyL_Large_16.copyWith(
+                      color: const Color(0xffDD8560),
                     ),
                   ),
                 ),

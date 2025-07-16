@@ -1,4 +1,5 @@
 import 'package:fashion/core/entities/product_entity.dart';
+import 'package:fashion/core/utils/text_styles.dart';
 import 'package:fashion/core/widgets/custom_app_bar.dart';
 import 'package:fashion/features/check_out/presentation/views/widgets/amount.dart';
 import 'package:flutter/material.dart';
@@ -23,18 +24,15 @@ class CheckOutItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    product.name,
-                    style: const TextStyle(
-                      fontSize: 25,
-                      letterSpacing: 2.5,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    product.name.toUpperCase(),
+                    style: TextStyles.price_Large_18.copyWith(fontSize: 20),
                   ),
+                  const SizedBox(height: 8),
                   Text(
-                    product.description,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: Color(0xff555555),
+                    product.description.toUpperCase(),
+                    style: TextStyles.bodyL_Large_16.copyWith(
+                      fontSize: 14,
+                      color: const Color(0xff555555),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -42,9 +40,8 @@ class CheckOutItem extends StatelessWidget {
                   const SizedBox(height: 15),
                   Text(
                     "\$${product.price.toString()}",
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: Color(0xffDD8560),
+                    style: TextStyles.price_Large_18.copyWith(
+                      color: const Color(0xffDD8560),
                     ),
                   ),
                 ],
