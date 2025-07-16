@@ -22,9 +22,17 @@ class Assets {
   /// assets/image/cover3.png
   static const String assetsImageCover3 = "assets/image/cover3.png";
 
+  /// Assets for assetsImageDiscount
+  /// assets/image/discount.svg
+  static const String assetsImageDiscount = "assets/image/discount.svg";
+
   /// Assets for assetsImageDivider
   /// assets/image/divider.svg
   static const String assetsImageDivider = "assets/image/divider.svg";
+
+  /// Assets for assetsImageDoor
+  /// assets/image/door.svg
+  static const String assetsImageDoor = "assets/image/door.svg";
 
   /// Assets for assetsImageFirstProduct
   /// assets/image/first_product.jpg

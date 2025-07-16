@@ -1,5 +1,7 @@
+import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/features/auth/presentation/views/login_view.dart';
 import 'package:fashion/features/auth/presentation/views/sign_up_view.dart';
+import 'package:fashion/features/check_out/presentation/views/check_out_view.dart';
 import 'package:fashion/features/home/presentation/views/all_product_view.dart';
 import 'package:fashion/features/home/presentation/views/home_view.dart';
 import 'package:fashion/features/splash/presentation/views/splash_view.dart';
@@ -17,6 +19,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const SignUpView());
     case AllProductView.routeName:
       return MaterialPageRoute(builder: (_) => const AllProductView());
+    case CheckOutView.routeName:
+      return MaterialPageRoute(
+        builder: (_) =>
+            CheckOutView(product: settings.arguments as ProductEntity),
+      );
     default:
       return MaterialPageRoute(
         builder: (_) =>
