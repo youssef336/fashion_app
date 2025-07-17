@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fashion/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 

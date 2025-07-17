@@ -2,7 +2,6 @@ import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/core/utils/assets.dart';
 import 'package:fashion/core/utils/text_styles.dart';
 import 'package:fashion/core/widgets/custom_app_bar.dart';
-import 'package:fashion/features/check_out/presentation/views/widgets/amount.dart';
 import 'package:fashion/features/check_out/presentation/views/widgets/check_out_buttom.dart';
 import 'package:fashion/features/check_out/presentation/views/widgets/check_out_item.dart';
 import 'package:fashion/features/check_out/presentation/views/widgets/header.dart';

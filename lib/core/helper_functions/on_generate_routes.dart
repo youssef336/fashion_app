@@ -1,8 +1,10 @@
 import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/features/auth/presentation/views/login_view.dart';
 import 'package:fashion/features/auth/presentation/views/sign_up_view.dart';
+import 'package:fashion/features/check_out/domain/entities/address_entity.dart';
 import 'package:fashion/features/check_out/presentation/views/address_view.dart';
 import 'package:fashion/features/check_out/presentation/views/check_out_view.dart';
+import 'package:fashion/features/check_out/presentation/views/payment_view.dart';
 import 'package:fashion/features/home/presentation/views/all_product_view.dart';
 import 'package:fashion/features/home/presentation/views/home_view.dart';
 import 'package:fashion/features/splash/presentation/views/splash_view.dart';
@@ -21,7 +23,13 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AllProductView.routeName:
       return MaterialPageRoute(builder: (_) => const AllProductView());
     case AddressView.routeName:
-      return MaterialPageRoute(builder: (_) => const AddressView());
+      return MaterialPageRoute(
+        builder: (_) => AddressView(
+          address: settings.arguments as ValueNotifier<AddressEntity?>,
+        ),
+      );
+    case PaymentView.routeName:
+      return MaterialPageRoute(builder: (_) => const PaymentView());
     case CheckOutView.routeName:
       return MaterialPageRoute(
         builder: (_) =>
