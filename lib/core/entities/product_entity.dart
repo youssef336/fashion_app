@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 class ProductEntity {
   String name;
   String description;

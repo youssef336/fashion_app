@@ -26,6 +26,7 @@ class _LoginLogicState extends State<LoginLogic> {
           const SizedBox(height: 20),
           CustomTextFormFeild(
             textInputType: TextInputType.emailAddress,
+            color: Colors.white,
             hintText: 'Email',
             maxLines: 1,
             obscureText: false,
@@ -35,6 +36,7 @@ class _LoginLogicState extends State<LoginLogic> {
           ),
           const SizedBox(height: 20),
           CustomTextFormFeild(
+            color: Colors.white,
             textInputType: TextInputType.visiblePassword,
             hintText: 'Password',
             maxLines: 1,

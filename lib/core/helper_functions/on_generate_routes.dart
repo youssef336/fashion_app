@@ -2,6 +2,7 @@ import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/features/auth/presentation/views/login_view.dart';
 import 'package:fashion/features/auth/presentation/views/sign_up_view.dart';
 import 'package:fashion/features/check_out/domain/entities/address_entity.dart';
+import 'package:fashion/features/check_out/domain/entities/card_entity.dart';
 import 'package:fashion/features/check_out/presentation/views/address_view.dart';
 import 'package:fashion/features/check_out/presentation/views/check_out_view.dart';
 import 'package:fashion/features/check_out/presentation/views/payment_view.dart';
@@ -29,7 +30,11 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         ),
       );
     case PaymentView.routeName:
-      return MaterialPageRoute(builder: (_) => const PaymentView());
+      return MaterialPageRoute(
+        builder: (_) => PaymentView(
+          cardNotifer: settings.arguments as ValueNotifier<CardEntity?>,
+        ),
+      );
     case CheckOutView.routeName:
       return MaterialPageRoute(
         builder: (_) =>

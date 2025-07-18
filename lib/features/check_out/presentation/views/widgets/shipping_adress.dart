@@ -5,21 +5,17 @@ import 'package:fashion/features/check_out/presentation/views/widgets/check_out_
 import 'package:flutter/material.dart';
 
 class ShippingAdress extends StatefulWidget {
-  const ShippingAdress({super.key});
-
+  const ShippingAdress({super.key, required this.addressNotifier});
+  final ValueNotifier<AddressEntity?> addressNotifier;
   @override
   State<ShippingAdress> createState() => _ShippingAdressState();
 }
 
 class _ShippingAdressState extends State<ShippingAdress> {
-  ValueNotifier<AddressEntity?> addressNotifier = ValueNotifier<AddressEntity?>(
-    AddressEntity(),
-  );
-
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<AddressEntity?>(
-      valueListenable: addressNotifier,
+      valueListenable: widget.addressNotifier,
       builder: (context, address, _) {
         return address == null || (address.address?.isEmpty ?? true)
             ? CheckOutSecoundPhaseItem(
@@ -29,7 +25,7 @@ class _ShippingAdressState extends State<ShippingAdress> {
                   Navigator.pushNamed(
                     context,
                     AddressView.routeName,
-                    arguments: addressNotifier,
+                    arguments: widget.addressNotifier,
                   );
                 },
               )
@@ -89,7 +85,7 @@ class _ShippingAdressState extends State<ShippingAdress> {
                               Navigator.pushNamed(
                                 context,
                                 AddressView.routeName,
-                                arguments: addressNotifier,
+                                arguments: widget.addressNotifier,
                               );
                             },
                             icon: const Icon(

@@ -36,4 +36,14 @@ class AddressEntity {
       zipCode: zipCode ?? zipCode,
     );
   }
+
+  static bool NotEmpty(AddressEntity address) {
+    return address.firstName != null &&
+        address.lastName != null &&
+        address.phone != null &&
+        address.address != null &&
+        address.state != null &&
+        address.city != null &&
+        address.zipCode != null;
+  }
 }

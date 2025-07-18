@@ -1,4 +1,3 @@
-
 import 'package:fashion/core/widgets/custom_buttom.dart';
 import 'package:fashion/core/widgets/custom_text_feild.dart';
 import 'package:fashion/features/auth/presentation/manager/cubits/sign_up/sign_up_cubit.dart';
@@ -32,6 +31,7 @@ class _SignUpLogicState extends State<SignUpLogic> {
           ),
           const SizedBox(height: 20),
           CustomTextFormFeild(
+            color: Colors.white,
             hintText: 'Email',
             textInputType: TextInputType.emailAddress,
             onSaved: (p0) {
@@ -40,6 +40,7 @@ class _SignUpLogicState extends State<SignUpLogic> {
           ),
           const SizedBox(height: 20),
           CustomTextFormFeild(
+            color: Colors.white,
             hintText: 'Password',
             textInputType: TextInputType.visiblePassword,
             obscureText: true,

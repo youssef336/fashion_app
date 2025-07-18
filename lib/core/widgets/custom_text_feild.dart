@@ -9,6 +9,8 @@ class CustomTextFormFeild extends StatelessWidget {
     this.onSaved,
     this.obscureText = false,
     this.maxLines = 1,
+    this.onChanged,
+    this.color = Colors.black,
   });
   final String hintText;
   final TextInputType textInputType;
@@ -16,12 +18,20 @@ class CustomTextFormFeild extends StatelessWidget {
   final void Function(String?)? onSaved;
   final bool obscureText;
   final int? maxLines;
+  final void Function(String)? onChanged;
+  final Color? color;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLines: maxLines,
       obscureText: obscureText,
       onSaved: onSaved,
+      style: TextStyle(
+        color: color, // 👈 This changes the text color
+        fontFamily: 'TenorSans',
+        fontWeight: FontWeight.w400,
+      ),
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter some text';
@@ -46,9 +56,7 @@ class CustomTextFormFeild extends StatelessWidget {
         focusedBorder: buildUnderlineBorder(),
       ),
 
-      onChanged: (value) {
-        // Handle text input changes here
-      },
+      onChanged: onChanged,
     );
   }
 

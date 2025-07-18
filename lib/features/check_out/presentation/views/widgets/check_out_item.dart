@@ -14,7 +14,19 @@ class CheckOutItem extends StatelessWidget {
       children: [
         Row(
           children: [
-            SizedBox(height: 160, child: Image.network(product.image!)),
+            SizedBox(
+              height: 160,
+              child: Hero(
+                tag: product.name, // or product.name if unique
+                child: Material(
+                  color: Colors.transparent,
+                  child: Image.network(
+                    product.image ?? "https://fallback-image-url.com",
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ),
             const SizedBox(width: 14),
             SizedBox(
               height: 160,

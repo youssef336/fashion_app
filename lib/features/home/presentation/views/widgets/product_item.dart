@@ -28,10 +28,15 @@ class ProductItem extends StatelessWidget {
             SizedBox(
               height: 220,
               width: MediaQuery.of(context).size.width * 0.5,
-              child: Image.network(
-                product.image ??
-                    "https://tse2.mm.bing.net/th/id/OIP.rs4ZT2mmKC11cgaVmW44RQHaJU?pid=Api&P=0&h=220",
-                fit: BoxFit.fill,
+              child: Hero(
+                tag: product.name, // or product.name if unique
+                child: Material(
+                  color: Colors.transparent,
+                  child: Image.network(
+                    product.image ?? "https://fallback-image-url.com",
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
             ),
             const SizedBox(height: 10),
