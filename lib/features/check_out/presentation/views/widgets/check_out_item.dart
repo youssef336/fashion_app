@@ -17,7 +17,7 @@ class CheckOutItem extends StatelessWidget {
             SizedBox(
               height: 160,
               child: Hero(
-                tag: product.name, // or product.name if unique
+                tag: 'product_${product.name}_${product.hashCode}',
                 child: Material(
                   color: Colors.transparent,
                   child: Image.network(

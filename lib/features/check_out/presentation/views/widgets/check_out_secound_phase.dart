@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, non_constant_identifier_names, deprecated_member_use
+
 import 'package:fashion/core/entities/product_entity.dart';
 import 'package:fashion/core/helper_functions/build_error_bar.dart';
 import 'package:fashion/core/utils/assets.dart';

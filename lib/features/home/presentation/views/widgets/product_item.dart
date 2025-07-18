@@ -29,7 +29,7 @@ class ProductItem extends StatelessWidget {
               height: 220,
               width: MediaQuery.of(context).size.width * 0.5,
               child: Hero(
-                tag: product.name, // or product.name if unique
+                tag: 'product_${product.name}_${product.hashCode}',
                 child: Material(
                   color: Colors.transparent,
                   child: Image.network(

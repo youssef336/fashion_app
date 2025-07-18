@@ -21,7 +21,6 @@ class PaymentTextFieild extends StatefulWidget {
 
 class _PaymentTextFieildState extends State<PaymentTextFieild> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  AutovalidateMode _autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -80,9 +79,7 @@ class _PaymentTextFieildState extends State<PaymentTextFieild> {
               );
               Navigator.pop(context);
             } else {
-              setState(() {
-                _autovalidateMode = AutovalidateMode.always;
-              });
+              setState(() {});
             }
           },
         ),
